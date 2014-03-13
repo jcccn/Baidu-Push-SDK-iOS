@@ -1,0 +1,28 @@
+iOS SDK 1.0.1
+时间：2013年8月23日
+Change Log：
+1.增加unbindChannel接口
+2.增加getAppId、getChannelId、getUserId接口
+3.修复del tag返回method名错误
+升级提示：
+建议升级。
+升级指南：
+1. unbindChannel接口将解绑应用和云推送server的绑定关系，解绑后将无法通过云推送给该端推送。可以通过再次bindChannel来恢复推送功能；
+2. getAppId、getChannelId、getUserId接口在成功bindChannel后，将可以返获取您需要的appid、channelid和userid，没绑定或者解绑后接口返回空。
+
+iOS SDK 1.0.0
+时间：2013年6月21日
+Change Log：
+1.ApiKey绑定
+2.设置和删除Tag
+升级提示：
+建议升级。
+升级指南：
+1. 大部分开发者使用无账号登陆，即Api Key绑定方式。需要在BPushConfig.plist文件中正确设置API_KEY的值，且在代码中不能调用setAccessToken接口。
+2. 在BPushConfig.plist文件中正确设置PRODUCTION_MODE的值。如果您的应用是用开发者证书签名，请设置为NO；如果您的应用是用发布证书（appstore或adhoc），请设置为YES。
+3. 调用setTags和setTag给应用的特定用户添加tag，通过服务端推送iOS群组消息。
+
+iOS SDK 0.9.0
+时间：2013年4月25日
+Change Log：
+1.	支持单播推送功能
