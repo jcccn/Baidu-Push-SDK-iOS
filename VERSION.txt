@@ -1,3 +1,31 @@
+iOS SDK 1.3.0
+时间：2015年3月20日
+Change Log：
+1.优化 setupChannel 接口，将原来需要创建 plist 配置文件的方式改为直接在 API 接口中作为参数传入
+2.优化网络传输，减少流量消耗
+3.封装第三方库，解决第三方库版本不一致的问题
+升级提示：
+解决了第三方库冲突，强烈建议开发者升级。
+升级指南：
+1.如果是从1.2以前的版本升级过来的用户，请先阅读下方各版本的升级指南。
+2.用 1.2 版本 SDK 中的静态库和头文件替换掉原工程中的文件。
+3.使用新的注册 Push 服务接口，正确传入参数。
+1.2 版本的 setupChannel 方法做了修改，如下：
+   +(void)registerChannel:(NSDictionary *)launchOptions apiKey:(NSString *)apikey pushMode:(BPushMode)mode isDebug:(BOOL)isdebug;
+4.删除 openSource 文件下原有的第三方库。
+
+iOS SDK 1.2.0
+时间：2014年8月11日
+Change Log：
+1.增加listtag接口
+2.修复旧版本内存泄漏的bug
+3.增加对第三方库自定义命名的机制，解决不同SDK之间第三方库不兼容的问题
+4.增加对iOS8的支持
+升级提示：
+建议升级。
+升级指南：
+1.如果opensource中的开源类与其他SDK冲突，请修改对应的头文件及实现文件中的类名：（@interface @implementation 都要改），并在BPushClass.m中修改返回的类，例如return [BPushBase64 class];
+
 iOS SDK 1.1.0
 时间：2013年9月06日
 Change Log：
